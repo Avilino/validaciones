@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+        <title>Verificacion de formularios con javas cript</title>
+
+        <style>
+            form{
+                width:295px;
+            }
+
+            ul{
+                list-style:none;
+            }
+
+            label{
+                width:200px;
+                display: block;
+                margin: 10px;
+                float:left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Ejemplo de formulario para <br> validacion con javascript</h1>
+        <form name="form1" onsubmit="return validar ();">
+            <ul>
+                <li>
+                    <label for="nombre">nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </li>
+                <li>
+                    <label for="nombre">direccion</label>
+                    <input type="text" name="direccion" id="direccion">
+                </li>
+                <li>
+                    <label for="nombre">Edad</label>
+                    <input type="text" name="edad" id="edad">
+                </li>
+                <li>
+                    <label for="nombre">E-mail</label>
+                    <input type="text" name="email" id="email">
+                </li>
+                <li>
+                    <label for="estudios">Estudios</label>
+                    <select name="estudios" id="estudios">
+                        <option value="">Seleccione</option>
+                        <option>Ninguno</option>
+                        <option>Primaria</option>
+                        <option>Bachiller</option>
+                        <option>Grado</option>
+                        <option>Mater</option>
+                    </select>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="SI" id="aceptn"/>
+                    </label>
+                </li>
+            </ul>
+            <button>Registrarse</button>
+        </form>
+
+        <script type="text/javascript">
+            function validar(){
+                var todo_correcto = true;
+                if(document.getElementById("nombre").value.length < 2){
+
+                }
+
+                if(document.getElementById("direccion").value.length < 10){
+                    
+                }
+
+                if(isNaN(document.getElementById("edad").value)){
+                    
+                }
+
+                var expresion = /^[a-z][\w.-]+@\w[\w.-]*[a-z][a-z]$/i;¨
+                var email = document.form1.email.value;
+                if(!expresion.test(email)){
+                    todo_correcto = false;
+                }
+
+                if(document.getElementById("estudios").value. == ){
+                    todo_correcto = false;
+                    
+                }
+                if(document.getElementById("acepto").checked){
+                    todo_correcto = false;
+                    
+                }
+                if(!todo_correcto){
+                    alert('alguno campos no estan correctos, vuelva a revisarlos ');
+                    
+                }
+
+                return todo_correcto;
+            }
+
+        </script>
+    </body>
+</html>
